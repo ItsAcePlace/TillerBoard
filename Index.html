@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiller Info Screen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startTime()">
+    <div class="clock"id="txt"></div>
+    <script>
+    function startTime() {
+        const now = new Date();
+        const opts = { timeZone: 'Europe/Oslo', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        const timeString = new Intl.DateTimeFormat('en-GB', opts).format(now); // "HH:MM:SS"
+        document.getElementById('txt').textContent = timeString;
+        setTimeout(startTime, 1000);
+    }
+    </script>
+    <div class="welcomebox">
+        <p>Velkommen til Informasjonsteknologi og Mediaproduksjon arealet!</p>
+    </div>
+    <div class="credits">
+        <p>☕ Utviklet av Emil Myhre, Åsmund Korsgat og Eivind Brubak | 1IM2 </p>
+    </div>
+</body>
+</html>
